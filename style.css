@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #1D1E28 0.12%, #261C2D 94.84%, #261A2D 100%);
+    font-family: 'Red Hat Text', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow:hidden;
+}
+
+
+h1 {
+    font-family: 'Red Hat Text', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: 7.5px;
+    margin-bottom: 104px;
+    margin-top:135px;
+    color: white;
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+.bg-stars, .bg-hills {
+    position: absolute;
+}
+
+.bg-hills {
+    top: 80vh;
+    bottom: 0;
+    width: 100%;   
+}
+
+.container {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh; 
+  }
+  
+
+.days, .hours, .mins, .secs {
+    color: #FB5E84;
+    border-radius: .4rem;
+    background: linear-gradient(hsl(228, 25%, 19%) 50%, hsl(236, 21%, 26%) 50%);
+    font-size: 3.6rem;
+    font-weight: 700;
+    padding: 1.4rem 1.1rem;
+    min-width: 7rem;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 8px 4px rgba(16, 16, 16, 0.5);
+}
+
+.time-label {
+    color: #8385A9;
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .29rem;
+    margin-top: 20px;
+}
+
+/*card design*/
+
+.card {
+    position: relative;
+    margin-bottom: 2rem;
+    width: 148px;
+    height:150px;
+
+}
+
+.card div::before {
+    background-color: #000;
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8.5rem;
+    height: .5px;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.card::before {
+    content: '';
+    background-color: #1D1E28;
+    position: absolute;
+    top: 36%;
+    left: -.12rem;
+    width: .6rem;
+    height: .4rem;
+    border-radius: 0 0 50% 50%;
+    transform: rotate(270deg);
+    z-index: 2;
+  }
+  
+  .card::after {
+    content: '';
+    background-color: #1D1E28;
+    position: absolute;
+    top: 36%;
+    right: -.16rem;
+    width: .6rem;
+    height: .4rem;
+    border-radius: 0 0 50% 50%;
+    transform: rotate(90deg);
+  }
+
+  
+  
+
+
+.time-container {
+    display: flex;
+    gap: 1.6rem;
+    text-align: center;
+}
+
+footer {
+    color: #fff;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 3.2rem;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+}
+
+.attribution a { 
+    color: #f76b8e;
+}
+
+
+
+/*animation*/
+
+.bg-stars {
+    height: 100vh;
+    width: 100vw;
+    background: url('/images/bg-stars.svg') repeat;
+    animation: move-stars 10s linear infinite;
+    position: absolute;
+}
+
+.bg-stars2{
+    height: 100vh;
+    width: 100vw;
+    background: url('/images/bg-stars.svg') repeat;
+    animation: move-stars2 10s linear infinite;
+    animation-delay: 2s;
+    position: absolute;
+}
+
+
+
+@keyframes move-stars {
+    from {
+        transform: translateY(0vh);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+
+}
+
+@keyframes move-stars2 {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(0vh);
+    }
+
+}
+
+
+/*switch button*/
+#switch {
+    background-color: #FB5E84;
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    letter-spacing: 3px;
+  }
+  
+  #switch:hover {
+    background-color: #fff;
+    color: #FB5E84;
+  }
+
+
+  @media (max-width: 600px) {
+    
+	.time-container {
+	  flex-direction: column;
+	}
+
+    body{
+        overflow: visible;
+        background: #261C2D;
+    }
+
+    .bg-hills{
+        position: relative;
+        top: 75rem;
+    }
+
+    @keyframes move-stars {
+        from {
+            transform: translateY(0vh);
+        }
+        to {
+            transform: translateY(50vh);
+        }
+    
+    }
+
+    .socials{
+        position: relative;
+        top:31.25rem;
+        padding: 50px;
+    }
+
+    h1{
+        margin-top:10px;
+        text-align: center;
+    }
+
+    #switch{
+        display: none;
+    }
+
+}
+  
